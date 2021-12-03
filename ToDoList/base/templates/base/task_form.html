@@ -1,13 +1,19 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
-<h3>Edit TASK</h3>
-<a href="{% url 'tasks' %}">Back</a>
-<form method="POST" action="">
-    {% csrf_token %}
-    {{form.as_p}}
-    <input type="submit" value="Submit">
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">Back</a>
+    <h3>TO DO TASK</h3>
+</div>
 
-</form>
+<div class="form-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input class="button" type="submit" value="Submit">
+
+    </form>
+</div>
 
 {% endblock content %}
+

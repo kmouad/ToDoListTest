@@ -1,8 +1,11 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
+<div class="header-bar">
+    <h1>My To Do List</h1>
+    <div><a href="{% url 'create-task' %}">Add Task</a></div>
 
-<h1>My To Do List</h1>
+</div>
 
 <div class="task-list-wrapper">
     {% for task in tasks %}

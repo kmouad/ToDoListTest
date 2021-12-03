@@ -1,11 +1,15 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
-
-<h3>{{ task.title }}</h3>
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">Back</a>
+    <h3>{{ task.title }}</h3>
+</div>
 <div>
     <h5>Description</h5>
-    <p>{{task.description}}</p>
+    <div>
+        <p>{{task.description}}</p>
+    </div>
 </div>
 
 {% endblock content %}
