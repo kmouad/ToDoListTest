@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.edit import UpdateView
+from django.views.generic.detail import DetailView
 from rest_framework import viewsets
 from .models import Task
 from .serializers import TaskSerializer
@@ -23,6 +24,13 @@ class TaskUpdate(UpdateView):
     # Here we can choose wich field to edit, we will keep all fields so that we can change them
     fields = '__all__'
     success_url = reverse_lazy('tasks')
+
+#View to show the detail of a To Do task
+class TaskDetail(DetailView):
+    model = Task
+    context_object_name = 'task'
+    template_name = 'base/task.html'
+
 
 
 
